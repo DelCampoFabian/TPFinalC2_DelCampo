@@ -88,6 +88,34 @@ namespace presentacion
             cargar();
         }
 
-      
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado= (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Desea eliminar este articulo?", "Eliminar", MessageBoxButtons.YesNo,MessageBoxIcon.Warning );
+                if(respuesta == DialogResult.Yes )
+                {
+                    negocio.eliminar(seleccionado.id);
+                    cargar();
+
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
+            AltaDetalle abrir = new AltaDetalle(seleccionado);
+            abrir.ShowDialog();
+            
+        }
     }
 }
