@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
@@ -24,18 +25,21 @@ namespace presentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
+            cbFiltro.Items.Add("Categoria");
+            cbFiltro.Items.Add("Marca");
         }
 
         private void cargar()
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-
+            
             try
             {
                 articuloList = negocio.listar();
                 dgvArticulo.DataSource= articuloList;
                 ocultarColumns();
                 cargarImg(articuloList[0].imagenUrl);
+
             }
             catch (Exception ex)
             {
@@ -116,6 +120,52 @@ namespace presentacion
             AltaDetalle abrir = new AltaDetalle(seleccionado);
             abrir.ShowDialog();
             
+        }
+
+        private void cbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MarcaNegocio marca = new MarcaNegocio();
+            CategoriaNegocio categoria = new CategoriaNegocio();
+            string opcion = cbFiltro.SelectedItem.ToString();   
+            
+            try
+            {
+                if(opcion == "Categoria")
+                {
+                    cbCriterio.DataSource = categoria.listar();
+                    cargar();
+                }else if(opcion == "Marca")
+                {
+                    cbCriterio.DataSource = marca.listar();
+                    cargar();
+                }
+
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            if (cbFiltro.SelectedItem.ToString() == "Categoria")
+            {
+               listaFiltrada = articuloList.FindAll((item) => item.categoria.descripcion == cbCriterio.SelectedItem.ToString());
+               dgvArticulo.DataSource = null;
+               dgvArticulo.DataSource = listaFiltrada;
+                ocultarColumns();
+
+            }
+            else if (cbFiltro.SelectedItem.ToString() == "Marca")
+            {
+                listaFiltrada = articuloList.FindAll((item) => item.marca.descripcion == cbCriterio.SelectedItem.ToString());
+                dgvArticulo.DataSource = null;
+                dgvArticulo.DataSource = listaFiltrada;
+                ocultarColumns();
+            }
         }
     }
 }

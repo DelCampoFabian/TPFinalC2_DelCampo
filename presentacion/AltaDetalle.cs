@@ -27,14 +27,22 @@ namespace presentacion
 
         private void AltaDetalle_Load(object sender, EventArgs e)
         {
-            lblDetalleCodigo.Text = "Código: " + articulo.codigo;
-            lblDetalleNombre.Text = "Nombre: " + articulo.nombre;
-            lblDetalleDescripcion.Text = "Descripción: " + articulo.descripcion;
-            lblDetalleMarca.Text = "Marca: " + articulo.marca.descripcion;
-            lblDetalleCategoria.Text = "Categoria: " + articulo.categoria.descripcion;
-            cargarImg(articulo.imagenUrl);
-            lblDetalleImg.Text = "Url imagen: " + articulo.imagenUrl;
-            lblDetallePrecio.Text = "Precio: " + articulo.precio.ToString();
+            try
+            {
+                lblDetalleCodigo.Text = "Código: " + articulo.codigo;
+                lblDetalleNombre.Text = "Nombre: " + articulo.nombre;
+                lblDetalleDescripcion.Text = "Descripción: " + articulo.descripcion;
+                lblDetalleMarca.Text = "Marca: " + articulo.marca.descripcion;
+                lblDetalleCategoria.Text = "Categoria: " + articulo.categoria.descripcion;
+                cargarImg(articulo.imagenUrl);
+                lblDetalleImg.Text = "Url imagen: " + articulo.imagenUrl;
+                lblDetallePrecio.Text = "Precio: " + articulo.precio.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
 
         }
 
