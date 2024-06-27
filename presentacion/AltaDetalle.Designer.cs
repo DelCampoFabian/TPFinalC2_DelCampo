@@ -108,17 +108,17 @@
             // 
             this.LblDetalleTitulo.AutoSize = true;
             this.LblDetalleTitulo.Font = new System.Drawing.Font("Montserrat SemiBold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleTitulo.Location = new System.Drawing.Point(171, 32);
+            this.LblDetalleTitulo.Location = new System.Drawing.Point(221, 32);
             this.LblDetalleTitulo.Name = "LblDetalleTitulo";
             this.LblDetalleTitulo.Size = new System.Drawing.Size(322, 44);
             this.LblDetalleTitulo.TabIndex = 7;
-            this.LblDetalleTitulo.Text = "Detalle de articulo";
+            this.LblDetalleTitulo.Text = "Detalle de artículo";
             // 
             // pbDetalleImagen
             // 
             this.pbDetalleImagen.Location = new System.Drawing.Point(435, 107);
             this.pbDetalleImagen.Name = "pbDetalleImagen";
-            this.pbDetalleImagen.Size = new System.Drawing.Size(283, 387);
+            this.pbDetalleImagen.Size = new System.Drawing.Size(317, 387);
             this.pbDetalleImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDetalleImagen.TabIndex = 8;
             this.pbDetalleImagen.TabStop = false;

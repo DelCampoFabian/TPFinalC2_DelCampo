@@ -116,5 +116,10 @@ namespace presentacion
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void txtImg_Leave(object sender, EventArgs e)
+        {
+            cargarImg(txtImg.Text);
+        }
     }
 }
