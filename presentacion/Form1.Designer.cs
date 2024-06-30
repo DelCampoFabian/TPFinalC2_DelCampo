@@ -178,6 +178,7 @@
             // chbCategoria
             // 
             this.chbCategoria.AutoSize = true;
+            this.chbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbCategoria.Location = new System.Drawing.Point(27, 156);
             this.chbCategoria.Name = "chbCategoria";
             this.chbCategoria.Size = new System.Drawing.Size(71, 17);
@@ -189,7 +190,8 @@
             // chbMarca
             // 
             this.chbMarca.AutoSize = true;
-            this.chbMarca.Location = new System.Drawing.Point(220, 158);
+            this.chbMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbMarca.Location = new System.Drawing.Point(226, 158);
             this.chbMarca.Name = "chbMarca";
             this.chbMarca.Size = new System.Drawing.Size(56, 17);
             this.chbMarca.TabIndex = 15;

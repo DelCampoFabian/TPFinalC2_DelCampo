@@ -50,11 +50,11 @@ namespace presentacion
         {
             try
             {
-                pbDetalleImagen.Load(imagen);
+                pbArticulo.Load(imagen);
             }
             catch (Exception)
             {
-                pbDetalleImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD4qmuiXoOrmp-skck7b7JjHA8Ry4TZyPHkw&s");
+                pbArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD4qmuiXoOrmp-skck7b7JjHA8Ry4TZyPHkw&s");
 
             }
         }

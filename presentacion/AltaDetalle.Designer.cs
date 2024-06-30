@@ -36,8 +36,8 @@
             this.lblDetalleImg = new System.Windows.Forms.Label();
             this.lblDetallePrecio = new System.Windows.Forms.Label();
             this.LblDetalleTitulo = new System.Windows.Forms.Label();
-            this.pbDetalleImagen = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDetalleImagen)).BeginInit();
+            this.pbArticulo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDetalleNombre
@@ -114,21 +114,21 @@
             this.LblDetalleTitulo.TabIndex = 7;
             this.LblDetalleTitulo.Text = "Detalle de artículo";
             // 
-            // pbDetalleImagen
+            // pbArticulo
             // 
-            this.pbDetalleImagen.Location = new System.Drawing.Point(435, 107);
-            this.pbDetalleImagen.Name = "pbDetalleImagen";
-            this.pbDetalleImagen.Size = new System.Drawing.Size(317, 387);
-            this.pbDetalleImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDetalleImagen.TabIndex = 8;
-            this.pbDetalleImagen.TabStop = false;
+            this.pbArticulo.Location = new System.Drawing.Point(435, 107);
+            this.pbArticulo.Name = "pbArticulo";
+            this.pbArticulo.Size = new System.Drawing.Size(317, 387);
+            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbArticulo.TabIndex = 8;
+            this.pbArticulo.TabStop = false;
             // 
             // AltaDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 541);
-            this.Controls.Add(this.pbDetalleImagen);
+            this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.LblDetalleTitulo);
             this.Controls.Add(this.lblDetallePrecio);
             this.Controls.Add(this.lblDetalleImg);
@@ -144,7 +144,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle de articulo";
             this.Load += new System.EventHandler(this.AltaDetalle_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbDetalleImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,6 +160,6 @@
         private System.Windows.Forms.Label lblDetalleImg;
         private System.Windows.Forms.Label lblDetallePrecio;
         private System.Windows.Forms.Label LblDetalleTitulo;
-        private System.Windows.Forms.PictureBox pbDetalleImagen;
+        private System.Windows.Forms.PictureBox pbArticulo;
     }
 }

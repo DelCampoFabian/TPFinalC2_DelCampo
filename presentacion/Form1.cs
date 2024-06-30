@@ -57,7 +57,7 @@ namespace presentacion
             dgvArticulo.Columns["id"].Visible = false;
 
         }
-        private void cargarImg(string imagen)
+        public void cargarImg(string imagen)
         {
             try
             {
@@ -221,6 +221,7 @@ namespace presentacion
             cargar();
             chbCategoria.Checked = false;
             chbMarca.Checked = false;
+            txtBuscar.Text = "";
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
