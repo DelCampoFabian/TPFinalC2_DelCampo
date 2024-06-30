@@ -14,6 +14,7 @@ namespace presentacion
     public partial class AltaDetalle : Form
     {
         private Articulo articulo;
+        Generico generico= new Generico();
         public AltaDetalle()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace presentacion
                 lblDetalleDescripcion.Text = "Descripción: " + articulo.descripcion;
                 lblDetalleMarca.Text = "Marca: " + articulo.marca.descripcion;
                 lblDetalleCategoria.Text = "Categoria: " + articulo.categoria.descripcion;
-                cargarImg(articulo.imagenUrl);
+                generico.CargarImg(pbArticulo, articulo.imagenUrl);
                 lblDetalleImg.Text = "Url imagen: " + articulo.imagenUrl;
                 lblDetallePrecio.Text = "Precio: " + articulo.precio.ToString();
             }
@@ -46,17 +47,6 @@ namespace presentacion
 
         }
 
-        private void cargarImg(string imagen)
-        {
-            try
-            {
-                pbArticulo.Load(imagen);
-            }
-            catch (Exception)
-            {
-                pbArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD4qmuiXoOrmp-skck7b7JjHA8Ry4TZyPHkw&s");
-
-            }
-        }
+       
     }
 }

@@ -18,6 +18,7 @@ namespace presentacion
     {
         Articulo articulo = null;
         OpenFileDialog archivo = null; 
+        Generico generico = new Generico();
         public AltaArticulo()
         {
             InitializeComponent();
@@ -51,7 +52,7 @@ namespace presentacion
                     txtNombre.Text = articulo.nombre;
                     txtDescripcion.Text = articulo.descripcion;
                     txtImg.Text = articulo.imagenUrl;
-                    cargarImg(articulo.imagenUrl);
+                    generico.CargarImg(pbArticulo, articulo.imagenUrl);
                     txtPrecio.Text = articulo.precio.ToString();
                     cbMarca.SelectedValue = articulo.marca.id;
                     cbCategoria.SelectedValue = articulo.categoria.id;
@@ -63,20 +64,6 @@ namespace presentacion
                 MessageBox.Show(ex.ToString());
             }
         }
-
-        private void cargarImg(string imagen)
-        {
-            try
-            {
-                pbArticulo.Load(imagen);
-            }
-            catch (Exception)
-            {
-                pbArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD4qmuiXoOrmp-skck7b7JjHA8Ry4TZyPHkw&s");
-
-            }
-        }
-
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -154,7 +141,7 @@ namespace presentacion
 
         private void txtImg_Leave(object sender, EventArgs e)
         {
-            cargarImg(txtImg.Text);
+            generico.CargarImg(pbArticulo,txtImg.Text);
         }
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -171,9 +158,7 @@ namespace presentacion
             if (archivo.ShowDialog() == DialogResult.OK)
             {
                 txtImg.Text = archivo.FileName;
-                cargarImg(txtImg.Text);
-
-                //File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-Img"] + archivo.SafeFileName);
+                generico.CargarImg(pbArticulo, txtImg.Text);
             } 
         }
     }

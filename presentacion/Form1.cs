@@ -16,12 +16,12 @@ namespace presentacion
     public partial class Form1 : Form
     {
         private List<Articulo> articuloList = new List<Articulo>();
-
+        
         public Form1()
         {
             InitializeComponent();
         }
-
+        Generico generico = new Generico();
         private void Form1_Load(object sender, EventArgs e)
         {                
             cargar();
@@ -40,7 +40,7 @@ namespace presentacion
                 articuloList = negocio.listar();
                 dgvArticulo.DataSource= articuloList;
                 ocultarColumns();
-                cargarImg(articuloList[0].imagenUrl);
+                generico.CargarImg(pbArticulo,articuloList[0].imagenUrl);
 
             }
             catch (Exception ex)
@@ -57,25 +57,14 @@ namespace presentacion
             dgvArticulo.Columns["id"].Visible = false;
 
         }
-        public void cargarImg(string imagen)
-        {
-            try
-            {
-                pbArticulo.Load(imagen);
-            }
-            catch (Exception)
-            {
-                pbArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD4qmuiXoOrmp-skck7b7JjHA8Ry4TZyPHkw&s");
-                
-            }
-        }
+   
 
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
         {
             if(dgvArticulo.CurrentRow != null)
             {
                 Articulo seleccionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
-                cargarImg(seleccionado.imagenUrl);
+                generico.CargarImg(pbArticulo,seleccionado.imagenUrl);
             }
         }
 
